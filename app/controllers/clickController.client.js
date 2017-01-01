@@ -4,7 +4,7 @@
    var addButton = document.querySelector('.btn-add');
    var deleteButton = document.querySelector('.btn-delete');
    var clickNbr = document.querySelector('#click-nbr');
-   var apiUrl = 'https://base-clementine-swyx.c9users.io/api/clicks';
+   var apiUrl = process.env.BASE_URL + '/api/clicks';
 
    function ready (fn) {
       if (typeof fn !== 'function') {
