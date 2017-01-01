@@ -49,4 +49,4 @@
       });
 
    }, false); 
-})(process.env.BASE_URL);
+})('https://pacific-cliffs-16784.herokuapp.com');
