@@ -5,8 +5,9 @@ var express = require('express'),
     mongoose = require('mongoose');
 
 var app = express();
-//var uri = 'mongodb://testuser:testpassword@ds151078.mlab.com:51078/heroku_h4h7rgj4';
-mongoose.connect('mongodb://localhost:27017/clementinejs');
+var uri = 'mongodb://testuser:testpassword@ds151078.mlab.com:51078/heroku_h4h7rgj4';
+//var uri = 'mongodb://localhost:27017/clementinejs';
+mongoose.connect(uri);
 
 app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
 app.use('/public', express.static(process.cwd() + '/public'));
