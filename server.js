@@ -6,7 +6,7 @@ var express = require('express'),
 
 var app = express();
 
-mongo.connect('mongodb://localhost:27017/clementinejs', function (err, db) {
+mongo.connect(process.env.MONGOLAB_URI || "mongodb://" + process.env.IP + ":27017/file-meta" || 'mongodb://localhost:27017/clementinejs', function (err, db) {
 
     if (err) {
         throw new Error('Database failed to connect!');
@@ -19,7 +19,7 @@ mongo.connect('mongodb://localhost:27017/clementinejs', function (err, db) {
 
     routes(app, db);
 
-    app.listen(8080, function () {
+    app.listen(process.env.PORT || 8080, function () {
         console.log('Listening on port 3000...');
     });
 
