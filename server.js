@@ -6,8 +6,10 @@ var express = require('express'),
 
 var app = express();
 
-console.log(process.env.MONGOLAB_URI + '/clementinejs');
-mongo.connect(process.env.MONGOLAB_URI + '/clementinejs' || "mongodb://" + process.env.IP + ":27017/file-meta" || 'mongodb://localhost:27017/clementinejs', function (err, db) {
+var uri = 'mongodb://testuser:testpassword@ds151078.mlab.com:51078/heroku_h4h7rgj4';
+//console.log(process.env.MONGOLAB_URI + '/clementinejs');
+//mongo.connect(process.env.MONGOLAB_URI + '/clementinejs' || "mongodb://" + process.env.IP + ":27017/file-meta" || 'mongodb://localhost:27017/clementinejs', function (err, db) {
+mongo.connect(uri || 'mongodb://localhost:27017/clementinejs', function (err, db) {
 
     if (err) {
         throw new Error('Database failed to connect!');
