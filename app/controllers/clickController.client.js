@@ -1,10 +1,10 @@
 'use strict';
 
-(function () {
+(function (baseurl) {
    var addButton = document.querySelector('.btn-add');
    var deleteButton = document.querySelector('.btn-delete');
    var clickNbr = document.querySelector('#click-nbr');
-   var apiUrl = process.env.BASE_URL + '/api/clicks';
+   var apiUrl = baseurl + '/api/clicks';
 
    function ready (fn) {
       if (typeof fn !== 'function') {
@@ -49,4 +49,4 @@
       });
 
    }, false); 
-})();
+})(process.env.BASE_URL);
