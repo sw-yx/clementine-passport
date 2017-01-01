@@ -6,7 +6,8 @@ var express = require('express'),
 
 var app = express();
 
-mongo.connect(process.env.MONGOLAB_URI || "mongodb://" + process.env.IP + ":27017/file-meta" || 'mongodb://localhost:27017/clementinejs', function (err, db) {
+console.log(process.env.MONGOLAB_URI + 'clementinejs');
+mongo.connect(process.env.MONGOLAB_URI + 'clementinejs' || "mongodb://" + process.env.IP + ":27017/file-meta" || 'mongodb://localhost:27017/clementinejs', function (err, db) {
 
     if (err) {
         throw new Error('Database failed to connect!');
